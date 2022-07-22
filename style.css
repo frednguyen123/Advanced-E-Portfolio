@@ -144,6 +144,108 @@ nav {
 
 /* 
 
+MODAL
+
+*/
+
+/* The entire modal window is absolute so it doesnt effect other padding etc
+   top/left: 50% centers it but still need to translate -50% to fully center
+   border radius for rounded corners. Display Flex to put windows side by side
+   overflow hidden to show rounded corners because block overlaps corners */
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 1100px;
+    height: 700px;
+    box-shadow: 0 20px 80px 0 rgb(0, 0, 0, 0.55);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+}
+
+/* Each Half takes up 50% 
+   padding for each half*/
+.modal__half{
+    width: 50%;
+    padding: 40px 72px;
+}
+
+/* Modal Background color white for left side 
+   center vertically*/
+.modal__about{
+    background-color: rgb(245, 245, 245);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Wrap langauges so that they will go to the next line */
+.modal__languages{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* width: 25% so that four images on each row */
+.modal__language{
+    width: 25%;
+    padding: 16px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 300ms ease;
+}
+
+/* When hovering modal__language name is shown */
+.modal__language:hover .language__name{
+    transform: scale(1);
+}
+
+/* When hovering modal__language size and brightness decrease */
+.modal__language:hover{
+    filter: brightness(80%);
+    transform: scale(0.9);
+}
+
+/* When not hovering name is not shown */
+.language__name{
+    position: absolute;
+    bottom: -10px;
+    transform: scale(0);
+    transition: all 300ms ease;
+}
+
+/* image is 100% width of the wrapper */
+.modal__language--img{
+    width: 100%;
+}
+
+.modal__title {
+    font-size: 26px;
+}
+
+.modal__sub-title {
+    font-size: 26px;
+}
+
+.modal__para {
+    margin-bottom: 12px;
+    line-height: 1.75;
+}
+
+/* Modal Background color black for left side */
+.modal__contact {
+    background-color: #242424;
+    color:white; 
+}
+
+
+
+/* 
+
 LANDING PAGE 
 
 */
@@ -364,6 +466,8 @@ footer{
 .footer__copyright{
     color: white;
 }
+
+
 
 
 
